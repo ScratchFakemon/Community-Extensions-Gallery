@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <title>Community Extension Gallery</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    header {
+      background-color: #1aaff9;
+      color: #ffffff;
+      font-family: "OCR A", sans-serif;
+      margin: 30px;
+      padding: 30px;
+      text-align: right;
+      border-radius: 20px;
+    }
+    body {
+      background-color: #123195;
+      color: #ffffff;
+      font-family: "OCR A", sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+    }
+    div {
+      text-align: center;
+      max-width: 1000px;
+      padding: 30px;
+      display: flex;
+      justify-content: space-between;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    .gal-list, .ext-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .gal-list-item, .ext-list-item {
+      width: 33%;
+      margin: 10px;
+      padding: 25px;
+      background-color:  #45aaed;
+      border-radius: 5px;
+      text-align: center;
+      cursor: pointer; /* Ensures entire item is clickable */
+    }
+    .gal-list-item h2, .ext-list-item h2 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+    .gal-list-item p, .ext-list-item p {
+      margin-bottom: 15px;
+    }
+    .gal-list-item:hover, .ext-list-item:hover {
+      background-color: rgb(32, 171, 252);
+    }
+    .gal-list-item img, .ext-list-item img {
+      max-width: 300px;
+      height: auto;
+      margin-left: 5px;
+    }
+    a {
+      color: #646cff;
+      font-weight: bold;
+      text-decoration: none; /* Remove underline */
+    }
+    .submit {
+      border-radius: 100px;
+      padding: 10px 10px 10px 10px;
+      background-color: rgb(234, 225, 225);
+    }
+    p {
+      text-align: center;
+    }
+    .logobanner {
+      max-height: 200px;
+      border-radius: 10px;
+      margin-top: 10px; 
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const galListItems = document.querySelectorAll('.gal-list-item');
+
+      galListItems.forEach(item => {
+        item.addEventListener('click', () => {
+          const link = item.getAttribute('data-link');
+          window.location.href = link;
+        });
+      });
+    });
+  </script>
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const extListItems = document.querySelectorAll('.ext-list-item');
+
+      extListItems.forEach(item => {
+        item.addEventListener('click', () => {
+          const copy = item.getAttribute('data-copy');
+          navigator.clipboard.writeText(copy);
+        });
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const creatorLinks = document.querySelectorAll("a"); 
+
+      creatorLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault(); // Prevent default behavior
+          window.open(link.href, '_blank'); // Open link in new tab
+        });
+      });
+    });
+  </script>
+
+</head>
+<body>
+    <img src="images/CEG Banner.svg" class="logobanner" alt="The banner for the Community Extensions Gallery">
+    <br>
+    <h3>A gallery of community-made extensions, curated by <a href="https://scratch.mit.edu/users/scratch_fakemon">Scratch_Fakemon</a>.</h3>
+  
+    <br>
+    <h2>Other Extension Galleries</h2>
+    <p>If you can't find what you're looking for here, check out these other galleries!</p>
+    <br>
+
+  <div class="container">
+    
+    <ul class="gal-list">
+      <li class="gal-list-item" data-link="https://extensions.turbowarp.org">
+        <img src="images/TurboWarp.svg" alt="TurboWarp logo"> <h2>TurboWarp Extensions Gallery</h2>
+        <p>Curated by <a href="https://Scratch.mit.edu/users/GarboMuffin" target="_blank">GarboMuffin</a> </p>
+        <p>The official extensions gallery for <a href="https://www.turbowarp.org">TurboWarp</a>.</p>
+      </li>
+      <li class="gal-list-item" data-link="https://extensions.penguinmod.com/">
+        <img src="images/PenguinMod.svg" alt="PenguinMod logo"> <h2>PenguinMod Extensions Gallery</h2>
+        <p>Curated by <a href="https://studio.penguinmod.com/credits.html" target="_blank">Multiple People</a> </p>
+        <p>The official extensions gallery for <a href="https://www.penguinmod.com">PenguinMod</a>. Not all extensions will work on TurboWarp.</p>
+      </li>
+      <li class="gal-list-item" data-link="https://sharkpools-extensions.vercel.app/">
+        <img src="images/SharkPool.svg" alt="SharkPool's logo"> <h2>SharkPool's Extensions Gallery</h2>
+        <p>Curated by <a href="https://scratch.mit.edu/users/DemonX5/" target="_blank">SharkPool (Aka DemonX5)</a> </p>
+        <p>A gallery of lots of extensions made by <a href="https://scratch.mit.edu/users/DemonX5/">SharkPool</a>.</p>
+      </li>
+      
+    </ul>
+    
+  </div>
+<br>
+  <h2>Extensions</h2>
+  <p>Some of these extensions might need to run unsandboxed.</p>
+  <br>
+   <p>Whoops! Looks like nobody's submitted any extension to the gallery yet!
+    <br>
+    <a href="https://docs.turbowarp.org/development/extensions/introduction">Make an extension</a> of your own and submit it! <br>
+    If it's good enough, I'll add it to the gallery.
+   </p>
+    <!--<div class="container">
+    
+      <ul class="ext-list">
+
+        <li class="ext-list-item" data-copy="https://extensions.turbowarp.org">
+          <img src="images/TurboWarp.svg" alt="TurboWarp logo"> <h2>TurboWarp Extensions Gallery</h2>
+          <p>Curated by <a href="https://Scratch.mit.edu/users/GarboMuffin" target="_blank">GarboMuffin</a> </p>
+          <p>The official extensions gallery for <a href="https://www.turbowarp.org">TurboWarp</a>.</p>
+        </li>
+        <li class="ext-list-item" data-copy="https://extensions.turbowarp.org">
+          <img src="images/TurboWarp.svg" alt="TurboWarp logo"> <h2>TurboWarp Extensions Gallery</h2>
+          <p>Curated by <a href="https://Scratch.mit.edu/users/GarboMuffin" target="_blank">GarboMuffin</a> </p>
+          <p>The official extensions gallery for <a href="https://www.turbowarp.org">TurboWarp</a>.</p>
+        </li>
+        
+       
+        
+      </ul>
+      
+    </div>-->
+    <br>
+    <a href="https://github.com/ScratchFakemon/Community-Extensions-Gallery/issues/new" class="submit">Submit an Extension</a>
+</body>
+</html>
