@@ -108,7 +108,8 @@
       extListItems.forEach(item => {
         item.addEventListener('click', () => {
           const copy = item.getAttribute('data-copy');
-          navigator.clipboard.writeText(copy);
+          console.log(fetch(copy));
+          navigator.clipboard.writeText(fetch(copy));
         });
       });
     });
@@ -160,6 +161,11 @@
         <p>Curated by <a href="https://scratch.mit.edu/users/0znzw/" target="_blank">0znzw</a> </p>
         <p>A gallery of lots of extensions made by <a href="https://scratch.mit.edu/users/0znzw/">0znzw (AKA Surv or Miyo)</a>.</p>
       </li>
+      <li class="gal-list-item" data-link="https://bludisanlemon.github.io/lemons-gallery/">
+        <img src="images/lemon.png" alt="Lemon's logo"> <h2>Lemon's Extension Gallery</h2>
+        <p>Curated by <a href="https://scratch.mit.edu/users/BludIsAnLemon/" target="_blank">BludIsAnLemon</a> </p>
+        <p>A gallery of lots of extensions made by <a href="https://scratch.mit.edu/users/BludIsAnLemon/">BludIsAnLemon</a>.</p>
+      </li>
       
     </ul>
     
@@ -181,7 +187,7 @@
         <li class="ext-list-item" data-copy="https://scratchfakemon.github.io/Community-Extensions-Gallery/src/Test.js">
           <img src="images/No Image.svg" alt="No Image"> <h2>Test</h2>
           <p>Created by <a href="https://Scratch.mit.edu/users/Scratch_Fakemon" target="_blank">Scratch_Fakemon</a> </p>
-          <p>A pretty basic extension with no purpose whatsoever. Does not need to run unsandboxed. Extension URL will be copied to clipboard.</p>
+          <p>A pretty basic extension with no purpose whatsoever. Does not need to run unsandboxed. Extension code will be copied to clipboard.</p>
         </li>
         
         
@@ -194,5 +200,8 @@
     <a href="https://github.com/ScratchFakemon/Community-Extensions-Gallery/issues" class="submit">Submit an Extension</a>
     <br>
     <a href="https://forms.gle/Vvi1xNtWbagQn7jc6">GitHub Issues not working?</a>
+    <span>
+      <p>Scratch_Fakemon and the Community Extensions Gallery are not affiliated with Scratch, The Scratch Team, The Scratch Foundation, TurboWarp, PenguinMod, or other related entities.</p>
+    </span>
 </body>
 </html>
