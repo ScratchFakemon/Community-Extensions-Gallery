@@ -102,14 +102,19 @@
     });
   </script>
    <script>
+   async function copyData(tocopy) {
+  let x = await fetch(tocopy);
+  let y = await x.text();
+  console.log(y);
+  navigator.clipboard.writeText(y);
+}
     document.addEventListener('DOMContentLoaded', () => {
       const extListItems = document.querySelectorAll('.ext-list-item');
 
       extListItems.forEach(item => {
         item.addEventListener('click', () => {
           const copy = item.getAttribute('data-copy');
-          console.log(fetch(copy));
-          navigator.clipboard.writeText(fetch(copy));
+          copyData(copy);
         });
       });
     });
@@ -172,7 +177,9 @@
   </div>
 <br>
   <h2>Extensions</h2>
-  <p>Some of these extensions might need to run unsandboxed.
+  <p>Some of these extensions might need to run unsandboxed. Make sure to tick "Run without sandbox" unless the extension says otherwise.
+    <br>
+    When you click an extension, its code will be copied to the clipboard.
   </p>
   <br>
   <!-- <p>Whoops! Looks like nobody's submitted any extension to the gallery yet!
@@ -187,7 +194,7 @@
         <li class="ext-list-item" data-copy="https://scratchfakemon.github.io/Community-Extensions-Gallery/src/Test.js">
           <img src="images/No Image.svg" alt="No Image"> <h2>Test</h2>
           <p>Created by <a href="https://Scratch.mit.edu/users/Scratch_Fakemon" target="_blank">Scratch_Fakemon</a> </p>
-          <p>A pretty basic extension with no purpose whatsoever. Does not need to run unsandboxed. Extension code will be copied to clipboard.</p>
+          <p>A pretty basic extension with no purpose whatsoever. Does not need to run unsandboxed.</p>
         </li>
         
         
