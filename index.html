@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-  <title>Community Extension Gallery</title>
+  <title>Community Extensions Gallery</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
@@ -88,6 +88,13 @@
       border-radius: 10px;
       margin-top: 10px; 
     }
+    .warning {
+      color: red;
+      background-color: rgba(139, 0, 0, 0.695);
+      border-radius: 20px;
+      padding: 20px 20px 20px 20px;
+      text-align: center;
+    }
   </style>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -137,7 +144,11 @@
     <img src="images/CEG Banner.svg" class="logobanner" alt="The banner for the Community Extensions Gallery">
     <br>
     <h3>A gallery of community-made extensions, curated by <a href="https://scratch.mit.edu/users/scratch_fakemon">Scratch_Fakemon</a>.</h3>
-  
+  <span class="warning">
+    <h2>These extensions are not compatible with Scratch.</h2>
+    <br>
+    <h3>If you try to load a project with these extensions, it will <b>NOT WORK.</b> These extensions require TurboWarp and other Scratch mods.</h3>
+  </span>
     <br>
     <h2>Other Extension Galleries</h2>
     <p>If you can't find what you're looking for here, check out these other galleries!</p>
