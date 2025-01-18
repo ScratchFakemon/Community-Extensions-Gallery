@@ -57,7 +57,7 @@
               menus: {
                 TYPES: {
                   acceptReporters: true,
-                  items: ['alert', "prompt"]
+                  items: ['alert', "prompt", "confirmation"]
                 }
               }
             };
@@ -71,6 +71,9 @@ returned = "OK";
         } else if (args.TYPE == "prompt") {
             returned = prompt(args.TEXT);
                     }
+                    else if (args.TYPE == "confirmation") {
+                        returned = confirm(args.TEXT);
+                                }
                     else {
                         alert("Error: Invalid Modal");
                         returned = "Error: Invalid Modal";
